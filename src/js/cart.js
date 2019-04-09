@@ -212,7 +212,7 @@ require(["require.config"],()=>{
             //购物车无商品
             noshop(){
                 let cart = JSON.parse(localStorage.getItem("cart"));
-                if(cart.length==0 || cart==null){
+                if(cart==null || cart.length==0 ){
                     
                     $(".cart-main").css({"display":"none"});
                     $(".noshop").css({"display":"block"});
