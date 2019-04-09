@@ -1,0 +1,20 @@
+<script type="text/html" id="shoplist-data">
+
+        <ul class="shoplist">
+            
+            {{each list item}}
+                <li>
+                    <img src="{{item.img[1]}}" alt="">
+                    <div class="li-wrap">
+                            <div class="shopname"><a href="javascript:;">{{item.name}}</a></div>
+                            <div class="introduce">{{item.introduce}}</div>
+                            <div class="shoppirce">￥<span>{{item.price}}</span></div>
+                            <div class="originalprice">￥<span>{{item.originalprice}}</span></div>
+                            <div class="mspurchase" data-id="{{item.lid}}{{item.id}}"><a href="javascript:;">马上抢</a></div>
+                            
+                    </div>    
+                    <div class="time">剩余：<span>{{item.time.day}}</span>天 <span>{{item.time.shi}}</span>时 <span>{{item.time.fen}}</span>分 <span>{{item.time.miao}}</span>秒</div>
+                </li>
+            {{/each}}
+        </ul>
+</script>

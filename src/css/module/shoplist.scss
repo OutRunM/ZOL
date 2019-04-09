@@ -1,0 +1,91 @@
+.shoplist{
+                
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    li{
+        margin-top: 20px;
+        width: 350px;
+        height: 450px;
+        border: 1px solid #e0e0e0;
+        padding: 20px 20px 0;
+        img{
+            width: 350px;
+            height: 300px;
+            
+        }
+        .li-wrap{
+            
+             height: 100px;
+             border-bottom: 1px dashed #dedede;
+             div{
+                margin-top:7px;
+             }
+             margin-bottom: 10px;
+        }
+        .shopname{
+            font: 14px/22px "Microsoft YaHei","\5FAE\8F6F\96C5\9ED1";
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            a{
+                color: #333;
+            }
+            a:hover{
+                text-decoration: underline;
+                color: #c40000;
+            }
+        
+        }
+        .introduce{
+            font-size: 12px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: #666;
+        }
+        .shoppirce{
+            font-size: 25px;
+            height: 30px;
+            font-weight: bold;
+            color: #c40000;
+            float: left;
+            
+        }
+        .originalprice{
+            margin-left: 5px;
+            height: 30px;
+            float: left;
+            font-size: 16px;
+            font-style: italic;
+            color: #666;
+            text-decoration:line-through;
+            line-height: 31px;
+        }
+        
+        .mspurchase{
+           width:84px;
+           height: 40px;
+           background: #c40000;
+           line-height: 40px;
+           text-align: center;
+           font-size: 16px;
+           float: right;
+           margin-top: 0 !important;
+           a{
+               color: #fff;
+           }
+        }
+        .time{
+            width: 50%;
+            float: left;
+            color: #999;
+            padding-left: 16px;
+            line-height: 14px;
+            span{
+                color: #cd0104;
+            }
+            background: url("/images/showTime.png") no-repeat 0px 0px;
+        }
+    }
+}

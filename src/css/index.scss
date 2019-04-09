@@ -1,0 +1,332 @@
+@import "style";
+@import "module/header";
+@import "module/search";
+@import "module/nav";
+@import "module/footer";
+@import "module/shoplist";
+
+
+.lunbotu{
+    .lunbotu-main{
+        margin: 0 auto;
+        width: 1200px;
+        height: 300px;
+        display: flex;
+        .swiper-container {
+            width: 900px;
+            height: 300px;
+            cursor: pointer;
+            .swiper-pagination{
+                li{
+                    width: 12px;
+                    height: 12px;
+                    opacity: 1;
+                    background: #fff;
+                    
+                }
+                .swiper-pagination-bullet-active{
+                    background: #c40000;
+                }
+            }
+        } 
+        .lunbotu-right{
+            flex: 1;
+            a{
+                img{
+                    vertical-align: middle;
+                }
+            }
+        }
+    }
+
+}
+//help
+
+.help{
+    display: block;
+    width: 1200px;
+    height: 80px;
+    margin: 0 auto;
+    background: #fafafa;
+    ul{
+        padding-left:54px; 
+        li{
+            width: 240px;
+            float: left;
+            height: 80px;
+            background: url("/images/siash.png") no-repeat 170px 25px ;
+            i{
+                float: left;
+                width: 50px;
+                height: 50px;
+                background: url("/images/ico.png") 0 166px;
+                margin-top:15px;
+                margin-right:10px;  
+            }
+            span{
+                font-size: 18px;
+                color: #ea6161;
+                line-height: 80px;
+            }
+            
+        }
+        li:nth-child(2){
+            i{
+                background-position: -51px 166px;
+            }
+            
+        }
+        li:nth-child(3){
+            i{
+                background-position: -101px 166px;
+            }
+            
+        }
+        li:nth-child(4){
+            i{
+                background-position: 0 116px;
+            }
+            
+        }
+        li:nth-child(5){
+            background: none;
+            width: 186px;
+            i{
+                background-position: -51px 116px;
+            }
+            
+        }
+    }
+}
+// Commodity Rotation Map
+.boutique{
+
+
+.boutique-main{
+    width: 1200px;
+    height: 450px;
+    // background: #666666;
+    margin: 0 auto;
+    position: relative;
+    margin-top: 10px;
+    h3{
+        font-size: 24px;
+        font-weight: normal;
+        position: absolute;
+        top: 0;
+    }
+    .swiper-container{
+        padding-top: 40px;
+        // i{
+        //     display: block;
+        //     height: 1px;
+        //     background: #e0e0e0;
+        // }
+        .swiper-slide{
+            width: 268px !important;
+            height: 320px;
+            padding: 15px 15px 20px;
+            border: 1px solid #e0e0e0;
+            
+            img{
+                width: 200px;
+                height: 200px;
+            }
+            div{
+                margin-top:7px; 
+            }
+            .shopname{
+                font: 14px/22px "Microsoft YaHei","\5FAE\8F6F\96C5\9ED1";
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                a{
+                    color: #333;
+                }
+                a:hover{
+                    text-decoration: underline;
+                    color: #c40000;
+                }
+            }
+            .shoppirce{
+                font-size: 16px;
+                color: #c40000;
+                float: left;
+                width: 25%;
+            }
+            .originalprice{
+                float: left;
+                font-size: 16px;
+                width: 75%;
+                font-style: italic;
+                color: #666;
+                text-decoration:line-through;
+            }
+            .storename{
+                a{
+                    color: #666;
+                    font-size: 14px;
+                }
+                float: left;
+            }
+            .purchase{
+               width:84px;
+               height: 40px;
+               background: #c40000;
+               line-height: 40px;
+               text-align: center;
+               font-size: 16px;
+               float: right;
+               a{
+                   color: #fff;
+               }
+            }
+            .time{
+                float: left;
+                color: #999;
+                span{
+                    color: #cd0104;
+                }
+            }
+        }
+        .btn{
+            position: absolute;
+            
+            width: 60px;
+            height: 20px;
+            top:0px;
+            right: 0px;
+            .swiper-button-prev-lunbotu{
+                width: 30px;
+                height: 20px;
+                top: 0;
+                left: -3px;
+                margin-top: 0;
+                border: 1px solid #e0e0e0;
+                background: url("/images/bx-btn.png") no-repeat -3px 0px;
+            }
+            .swiper-button-prev-lunbotu:hover{
+                background-position: -3px -44px;
+            }
+            .swiper-button-next-lunbotu{
+                width: 30px;
+                height: 20px;
+                top: 0;right:0;
+                border: 1px solid #e0e0e0;
+                margin-top: 0;
+                background: url("/images/bx-btn.png") no-repeat -3px -22px;
+
+            }
+            .swiper-button-next-lunbotu:hover{
+                background-position: -3px -66px;
+            }
+        }
+       
+    }
+    
+}
+}
+// Today group buying
+.today-group{
+    .today-group-wrap{
+        margin: 0 auto;
+        width: 1200px;
+        .today-header{
+            h3{
+                font-size: 24px;
+                font-weight: normal;
+            }
+            .sort-content{
+                width: 1198px;
+                height: 38px;
+                border: 1px solid #e0e0e0;
+                background: #fafafa;
+                li{
+                    float: left;
+                    line-height: 38px;
+                    padding: 0 20px;
+                    a{
+                        color: #666;
+                    }
+                    i{
+                        margin-top:18px; 
+                        margin-left:5px; 
+                        float: right;
+                        width: 0px;
+                        height: 0px;
+                        border-top: 4px solid #b6b5b5;
+                        border-left: 4px solid transparent;
+                        border-right: 4px solid transparent;
+                    }
+                }
+                
+                .red{
+                    background: #fff;
+                    padding: 0 19px;
+                    border-left: 1px solid #e0e0e0;
+                    border-right: 1px solid #e0e0e0;
+                    a{
+                        color: #c40000;
+                    }
+                }
+                li:nth-child(1){
+                    padding-left: 20px;
+                    border-left: 1px solid #fff;
+                }
+            }
+            
+        }
+        #load{
+            border: none;
+            width: 100%;
+            outline: none;
+            margin-top: 20px;
+            height: 30px;
+            color: #333;
+            border-radius: 4px;
+        }
+        #load:hover{
+            background: #999;
+        }
+    }
+}
+
+
+// 固定
+.fixed{
+    z-index: 100;
+    position: fixed;
+    bottom: 200px;
+    right: 0;
+    display: none;
+    div{
+        font-size: 14px;
+        width: 50px;
+        height: 50px;
+        background:#5e5e5d;
+        border-radius: 4px;
+        margin-bottom: 10px;
+        a{
+            margin:0 auto;
+            padding: 4px;
+            display: block;
+            width: 30px;
+            color: #fff;
+        }
+        a:hover{
+            text-decoration: underline;
+        }
+    }
+    div:hover{
+        background: #c40000;
+    }
+    .bottom{
+        a{
+            img{
+                display: block;
+                margin: 0 auto;
+                padding-top: 15px;
+            }
+        }
+    }
+}

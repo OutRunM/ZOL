@@ -1,0 +1,166 @@
+@import "style";
+@import "module/footer";
+@import "module/header";
+@import "module/nav";
+@import "module/search";
+@import "module/shoplist";
+// 固定
+.fixed{
+    z-index: 100;
+    position: fixed;
+    bottom: 200px;
+    right: 0;
+    display: none;
+    div{
+        font-size: 14px;
+        width: 50px;
+        height: 50px;
+        background:#5e5e5d;
+        border-radius: 4px;
+        margin-bottom: 10px;
+        a{
+            margin:0 auto;
+            padding: 4px;
+            display: block;
+            width: 30px;
+            color: #fff;
+        }
+        a:hover{
+            text-decoration: underline;
+        }
+    }
+    div:hover{
+        background: #c40000;
+    }
+    .bottom{
+        a{
+            img{
+                display: block;
+                margin: 0 auto;
+                padding-top: 15px;
+            }
+        }
+    }
+}
+//主体
+.main{
+    
+    .wrap{
+        width: 1200px;
+        margin: 0 auto;
+        text-align: center;
+        .head{
+            background: #f2f2f2;
+            border: 1px solid #ededed;
+            margin-top: 20px;
+            ul{
+                padding-left:20px; 
+                li{
+                    line-height: 34px;
+                    padding: 0 20px;
+                    float: left;
+                    height: 34px;
+                    a{
+                        color: #666;
+                    }
+                }
+                .red{
+                    background: #fff;
+                    padding: 0 19px;
+                    border-top: 2px solid #c40000;
+                    border-left: 1px solid #e0e0e0;
+                    border-right: 1px solid #e0e0e0;
+                    a{
+                        color: #c40000;
+                    }
+                }
+            }
+            ul::after{
+                content: "";
+                display: block;
+                clear: both;
+            }
+        }
+        .sort{
+            margin-top: 20px;
+            .sort-content{
+                width: 1198px;
+                height: 38px;
+                border: 1px solid #e0e0e0;
+                background: #fafafa;
+                li{
+                    float: left;
+                    line-height: 38px;
+                    padding: 0 20px;
+                    a{
+                        color: #666;
+                    }
+                    i{
+                        margin-top:18px; 
+                        margin-left:5px; 
+                        float: right;
+                        width: 0px;
+                        height: 0px;
+                        border-top: 4px solid #b6b5b5;
+                        border-left: 4px solid transparent;
+                        border-right: 4px solid transparent;
+                    }
+                }
+                
+                .red{
+                    background: #fff;
+                    padding: 0 19px;
+                    border-left: 1px solid #e0e0e0;
+                    border-right: 1px solid #e0e0e0;
+                    a{
+                        color: #c40000;
+                    }
+                }
+                li:nth-child(1){
+                    padding-left: 20px;
+                    border-left: 1px solid #fff;
+                }
+            }
+        }
+       .page{
+           display: inline-block;
+           margin: 20px auto;
+        //    margin-top:20px;
+           .prevpage,.nextpage,li{
+            float: left;
+                height: 40px;
+                width: 80px;
+                text-align: center;
+                line-height: 40px;   
+                color: #333333;     
+                border: 1px solid #e0e0e0;
+                
+           }
+           .nextpage:hover,li:hover,.prevpage:hover{
+               cursor: pointer;
+               border-color:#c40000;
+               color:#c40000;
+            }
+        ul{
+            float: left;
+            li{
+                margin: 0 5px;
+                height: 40px;
+                width: 40px;
+                float: left;
+            }
+            .red{
+                background: #c40000;
+                border-color:#c40000;
+                color:#fff;
+            }
+        }
+        
+       }
+       .page::after{
+           content: "";
+           clear: both;
+           display: block;
+       }
+    }
+}

@@ -1,0 +1,105 @@
+@import "style";
+
+body{
+    padding-top:80px;
+}
+.login{
+    margin: 0 auto;
+    width: 990px;
+    .login-head{
+        height: 94px;
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+    .logo{
+        width: 250px;
+       
+    }
+    .register{
+        line-height: 50px;
+        a{  
+            color: #cc0000;
+            padding: 0 10px;
+        }
+        a:hover{
+            background: #cc0000;
+            color: #fff;
+        }
+    }
+    
+    }
+    .login-main{
+        border: 1px solid #e6e6e6;
+        display: flex;
+        img{
+            vertical-align: middle;
+        }
+        form{
+            
+            padding-top: 45px;
+            flex: 1;
+            p{
+                
+                display: block;
+                width: 290px;
+                height: 37px;
+                text-align: center;
+                line-height: 37px;
+                font-size: 18px;
+                margin: 0 auto;
+                border-bottom:2px solid #cc0000; 
+            }
+            .user{
+                margin-top:26px; 
+                input{margin: 0 auto;
+                    margin-top:13px; 
+                    outline: none;
+                    display: block;
+                    width: 270px;
+                    height: 20px;
+                    padding: 10px;
+                }
+            }
+            
+            .rempwd{
+                margin: 13px auto;
+                width: 290px;
+                line-height: 10px;
+                #check{
+                    float: left;
+                }
+                span{
+                    float: right;
+                    a{
+                        color: #134ba0;
+
+                    }
+                    a:hover{
+                        text-decoration: underline;
+                    }
+                }
+            }
+            button{
+                margin: 20px auto;
+                display: block;
+                border: none;
+                width: 290px;
+                height: 40px;
+                background: #dd2f2f;
+                font-weight: 500;
+                color: #fff;
+                font-size: 14px;
+                outline: none;
+                cursor: pointer;
+            }
+            button:hover{
+                background: #af2b2b;
+
+            }
+            .register-btn{
+                margin: 40px auto;
+
+            }
+        }
+    }
+}

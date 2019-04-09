@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ZOL团购-商品详情</title>
+    <link rel="stylesheet" href="/css/details.css">
+    <link rel="stylesheet" href="/libs/swiper/css/swiper.min.css">
+
+</head>
+<body>
+    <!-- 头部 -->
+    <div id="header" class="header">
+       
+    </div>
+    <!-- 搜索-->
+
+    <div id="search" class="search">
+       
+    </div>
+    <!-- 导航 -->
+    <div class="nav" id="nav">
+    
+    </div>
+
+    
+    <!-- 右侧导航栏 -->
+    <div class="aside">
+        <div class="aside-main">
+            <ul>
+                <li><a href="javascript:;"></a></li>
+                <li><a href="javascript:;"></a></li>
+                <li><a href="/html/cart.html"></a><span class="cart-num">0</span><i class="tis">有新商品加入购物车</i></li>
+                <li><a href="javascript:;"></a></li>
+                
+            </ul>
+        </div>
+        <a href="javascript:;" class="gotop"></a>
+    </div>
+    <!-- 主体 -->
+    <div class="main">
+        <div class="main-head">
+            <ul>
+                <li><a href="/index.html">首页</a>&gt;</li>
+                <li><a href="javascript:;" id="lid"></a></li>
+            </ul>
+        </div>
+        <div class="main-content">
+            <script type="text/html" id="details">
+                <div class="pic">
+                    <div class="d-left">
+                        <div class="view_bd">
+                            <img class="zoom-img" src="{{img[0]}}" data-zoom-image="{{bimg[0]}}"/>
+                        </div>
+
+
+                        <!-- <div class="" > -->
+                            <div class="swiper-container view_thumbs view-ul" id="gal1">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide current">
+                                        <a href="#" data-image="{{img[0]}}" data-zoom-image="{{bimg[0]}}" id="zpic">
+                                        <img class="s s1" src="{{img[0]}}" /></a>
+                                    </div>
+                                    <div class="swiper-slide"><a href="#" data-image="{{img[1]}}" data-zoom-image="{{bimg[1]}}">
+                                        <img class="s" src="{{img[1]}}" /></a>
+                                    </div>
+                                    
+                                    <div class="swiper-slide"><a href="#" data-image="{{img[2]}}" data-zoom-image="{{bimg[2]}}">
+                                        <img class="s" src="{{img[2]}}" /></a>
+                                    </div>
+                                    <div class="swiper-slide"><a href="#" data-image="{{img[3]}}" data-zoom-image="{{bimg[3]}}">
+                                        <img class="s" src="{{img[3]}}" /></a>
+                                    </div>
+                                    <div class="swiper-slide"><a href="#" data-image="{{img[4]}}" data-zoom-image="{{bimg[4]}}">
+                                        <img class="s" src="{{img[4]}}" /></a>
+                                    </div>
+                                    <div class="swiper-slide"><a href="#" data-image="{{img[5]}}" data-zoom-image="{{bimg[5]}}">
+                                        <img class="s" src="{{img[5]}}" /></a>
+                                    </div>
+                                </div>
+                                <div class="swiper-button-prev" id="swiper-button-prev"></div>
+                                <div class="swiper-button-next" id="swiper-button-next"></div>
+                            </div>
+                        <!-- </div> -->
+
+                    </div>
+                </div>
+
+                <div class="main-right">
+                    <p class="name" id="name">{{name}}</p>
+                    <p class="introduce">{{introduce}}</p>
+                    <div class="time">
+                        <a href="javascript:;"><img src="/images/mall.png" alt=""></a>
+                        <a href="javascript:;"><img src="/images/group.png" alt=""></a>
+                        <div class="time-content">
+                            距结束仅剩<i id="day">{{time.day}}</i>天
+                            <span id="shi">{{time.shi}}</span>：
+                            <span id="fen">{{time.fen}}</span>：
+                            <span id="miao">{{time.miao}}</span>
+                        </div>
+                    </div>
+                    <div class="price-content">
+                        团&nbsp;&nbsp;购&nbsp;&nbsp;价：
+                        <div class="pirce">￥<span id="price">{{price}}</span></div>
+                        <div class="originalprice">￥<span id="originalprice">{{originalprice}}</span></div>
+                        <div class="discount">购买立即优惠：￥{{originalprice-price}}</div>
+                    </div>
+                
+                    <div class="storename">
+                        <div class="title">
+                            服务保障：
+                        </div>
+                        <p>由 <a href="javascript:;" id="storename">汇通数码风暴专营店</a> 发货并承诺提供以下服务保障</p>
+                        <div class="list">
+                                <div>正品保障</div>
+                                <div>发票保障</div>
+                                <div>无忧退换</div>
+                        </div>
+                        
+                    </div>
+                    <div class="setmeal">
+                        团购商品：
+                        <span>标配</span>
+                    </div>
+                    <div class="colortype">
+                        颜色类型：
+                        <span>白色</span>
+                        <span>红色</span>
+                        <span>蓝色</span>
+                        
+                    </div>
+                    <div class="purnum">
+                        <div>购买数量：</div>
+                        <div class="wrap">
+                            <div class = "red" unselectable="on" onselectstart="return false;" style="-moz-user-select:none;">-</div>
+                            <input type="text" value="1" id="purnum">
+                            <div class = "add" unselectable="on" onselectstart="return false;" style="-moz-user-select:none;" data-num="{{limit}}">+</div>
+                        </div>
+                        &nbsp;&nbsp;&nbsp;<span>限购<i id="limit">{{limit}}</i></span>件
+                    </div>
+                    <div class="btn">
+                            <button>立即购买</button>
+                            <button id="joincart">加入购物车</button>
+                    </div>
+
+                </div>
+        </script>
+        </div>
+        <div class="shopcontent">
+            
+        </div>
+    
+    </div>
+
+    <!-- 公共尾部 -->
+    <div class="footer">
+        
+    </div>
+    <script src="/libs/require.js" data-main="/js/details.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+
+<div class="boutique-main">
+    <h3>精品团</h3>
+    <div class="swiper-container boutique-lunbotu">
+        
+        <div class="swiper-wrapper" id="boutique-shoplist">
+            <!-- 插入boutique.html -->
+            <script type="text/html" id="boutique-shop">
+                {{each list item}}
+                    <div class="swiper-slide">
+                        
+                        <img src="{{item.img[0]}}" alt="">
+                        <div class="shopname"><a href="javascript:;">{{item.name}}</a></div>
+                        <div class="shoppirce">￥<span>{{item.price}}</span></div>
+                        <div class="originalprice">￥<span>{{item.originalprice}}</span></div>
+                        <div class="storename"><a href="javascript:;">{{item.storename}}</a></div>
+                        <div class="purchase" data-id="{{item.lid}}{{item.id}}"><a href="javascript:;">立即抢购</a></div>
+                        <div class="time">剩余：<span>{{item.time.day}}</span>天 <span>{{item.time.shi}}</span>时 <span>{{item.time.fen}}</span>分 <span>{{item.time.miao}}</span>秒</div>
+                    </div>
+                {{/each}}
+            </script>
+        
+        </div>
+        
+        <div class="btn">
+            <div class="swiper-button-prev swiper-button-prev-lunbotu"></div>
+            <div class="swiper-button-next swiper-button-next-lunbotu"></div>
+        </div>
+        
+    </div>
+</div>

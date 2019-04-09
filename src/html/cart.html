@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ZOL团购-商品详情</title>
+    <link rel="stylesheet" href="/css/cart.css">
+</head>
+<body>
+    <!-- 头部 -->
+    <div id="header" class="header">
+           
+    </div>
+
+    <!-- 主体 -->
+    <div class="main">
+        <div class="head">
+            <div class="logo">
+                    <a href="/index.html">
+                        <img src="/images/logo_130x60.png">
+                    </a>
+            </div>
+            
+            <ul>
+                <!-- 处于当前状态  样式为red
+                    处于上一步的状态 样式为over
+                    处于结束的状态 样式为oover
+                -->
+                <li class="red">加入购物车</li>
+                <li >下订单</li>
+                <li > 去付款</li>
+                <li >确认收货</li>
+                <li style="background-image:none;">评价</li>
+            </ul>
+        </div>
+        <div class="cart-main">
+            <div class="state">
+                <p>购物车状态 （<span class="cart-num">0</span>/<span>30</span>）</p>
+                <p>总计（不含运费）：<b>￥</b><b class="total">0</b><button>去结算</button></p>
+            </div>
+            <div class="cart-table">
+                <table>
+                    <tr class="th">
+                        <th>所选商品</th>
+                        <th>单价（元）</th>
+                        <th>数量</th>
+                        <th>优惠</th>
+                        <th>小计（元）</th>
+                        <th>操作</th>
+                    </tr>
+                    
+                    
+                    <tbody class="tbody"></tbody>
+                    
+                    
+                    
+                </table>
+                <div class="totalprice">
+                        <p>商品总价（不含运费）：<b>¥<span id="allprice">0</span></b></p>
+                </div>
+                <div class="settlement">
+                    <a href="javascript:;" class="left" id="delAll">批量删除</a>
+                    <div class="right">
+                        <a href="/index.html" class="goindex">&lt;&lt;继续购物</a>
+                        <a href="javascript:;" class="count">去结算</a>
+                    </div>
+                </div>
+            </div>
+            <div class="guess">
+                <div class="head">猜你还喜欢</div>
+                
+            </div>
+        </div>
+        <div class="noshop">
+            <b>您的购物车里还没有商品，您可以：</b>
+            <p>去&nbsp;&nbsp;&nbsp;&nbsp;<a href="/index.html">挑选商品</a></p>
+        </div>
+    </div>
+
+    <!-- 公共尾部 -->
+    <div class="footer">   
+        
+    </div>
+    <script src="/libs/require.js" data-main="/js/cart.js"></script>
+</body>
+</html>

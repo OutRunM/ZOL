@@ -1,0 +1,186 @@
+
+$headFontSize:#666666;
+// 头部
+.header{
+    height: 29px;
+    background: #f5f5f5;
+    border-bottom: 1px solid #e6e6e6;
+    .header-main{
+        margin: 0 auto;
+        font: 12px/29px arial;
+        
+        .left{
+            a:hover{
+                color: #f54f52;
+                text-decoration: #f54f52 underline;
+            }
+            >a{
+                color: $headFontSize;
+                padding-right: 24px;
+            }
+                float: left;
+            .loginAndregister{
+                color: $headFontSize;
+                float: right;
+               a{
+                   color: #3366cc;
+                   padding-right:24px; 
+               }
+               a:hover{
+                color: #f54f52;
+            }
+               .onlogin{
+                   display: none;
+                   a{
+                       color: $headFontSize;
+                       padding-right: 0;
+                       padding-left:10px; 
+                   }
+                   a:hover{
+                    text-decoration: none;
+                   }
+               }
+            }
+            .islogin{
+                .onlogin{
+                    display: block;
+
+                }
+                .nologin{
+                    display: none;
+                }
+            }
+
+        }
+        .right{
+            float: right;
+            a:hover{
+                color: #f54f52;
+                text-decoration: #f54f52 underline;
+            }
+            ul li{
+                
+                float: left;
+                box-sizing: border-box;
+                padding: 0 10px;
+                color: $headFontSize;
+                a{
+                    color: $headFontSize;
+                }
+                .xjt{
+                    position: relative;
+                    padding-right: 10px;
+                    
+                    i{  
+                        position: absolute;
+                        right: 0;
+                        top: 5px;
+                        height: 4px;
+                        width: 7px;
+                        background: url(/images/topbar_ico.png);
+                        background-position: 0 -45px;
+                    }
+                    b{
+                        position: absolute;
+                        left: 0;
+                        top: 0px;
+                        height: 14px;
+                        width: 10px;
+                        background: url(/images/topbar_ico.png);
+                        background-position: -10px -7px;
+                    }
+                   
+                }
+                
+            }
+            .mjzx{
+                position: relative;
+                .follow{
+                    background: #fff;
+                    display: none;
+                    position: absolute;
+                    width: 80px;
+                    padding: 0 10px;
+                    top: 29px;
+                    left: -1px;
+                    border-left: 1px solid #e6e6e6;
+                    border-bottom: 1px solid #e6e6e6;
+                    border-right: 1px solid #e6e6e6;
+                    span{
+                        color: #f54f52;
+                    }
+                }
+            }
+            .mjzx:hover{
+                background: #fff;
+                padding: 0 9px;
+                border-left: 1px solid #e6e6e6;
+                border-right: 1px solid #e6e6e6;
+                .follow{
+                    display: block;
+                    z-index: 100;
+
+                }
+            }
+            .lxkf{
+                position: relative;
+                .call{
+                    background: #fff;
+                    display: none;
+                    position: absolute;
+                    width: 80px;
+                    padding: 0 10px;
+                    top: 29px;
+                    left: -1px;
+                    border-left: 1px solid #e6e6e6;
+                    border-bottom: 1px solid #e6e6e6;
+                    border-right: 1px solid #e6e6e6;
+                    
+                }
+            }
+            .lxkf:hover{
+                background: #fff;
+                padding: 0 9px;
+                border-left: 1px solid #e6e6e6;
+                border-right: 1px solid #e6e6e6;
+                .call{
+                    display: block;
+                    z-index: 100;
+                }
+            }
+            .sjsc{
+                position: relative;
+                a{
+                    padding-left: 14px;
+                }
+                .code {
+                    display: none;
+                    position: absolute;
+                    top: 29px;
+                    left:-1px;
+                    border-left: 1px solid #e6e6e6;
+                    border-bottom: 1px solid #e6e6e6;
+                    border-right: 1px solid #e6e6e6;
+                    img{
+                        height: 150px;
+                        width: 150px;
+                    }
+                }
+            }
+            .sjsc:hover{
+                padding: 0 9px;
+                border-left: 1px solid #e6e6e6;
+                border-right: 1px solid #e6e6e6;
+                background: #fff;
+                .code{
+                    display: block;
+                    z-index: 100;
+                   
+                }
+            }
+            
+        } 
+       
+    }
+
+}

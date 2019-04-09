@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ZOL团购-首页</title>
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/libs/swiper/css/swiper.min.css">
+</head>
+<body>
+    <!-- 头部 -->
+    <div id="header" class="header">
+       
+    </div>
+
+    <!-- 搜索-->
+
+    <div id="search" class="search">
+       
+    </div>
+
+    <!-- 导航 -->
+    <div class="nav" id="nav">
+        
+    </div>
+    <!--含有轮播图部分 -->
+    <div class="lunbotu">
+        <div class="lunbotu-main">
+            <div class="swiper-container header-lunbotu">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><a href="javascript:;"><img src="/images/lunbo1.jpg" alt=""></a></div>
+                    <div class="swiper-slide"><a href="javascript:;"><img src="/images/lunbo2.jpg" alt=""></a></div>
+                    <div class="swiper-slide"><a href="javascript:;"><img src="/images/lunbo3.jpg" alt=""></a></div>
+                </div>
+                <!-- 如果需要分页器 -->
+                <div class="swiper-pagination"></div>
+                
+                <!-- 如果需要导航按钮 -->
+                <div class="swiper-button-prev" id="swiper-button-prev"></div>
+                <div class="swiper-button-next" id="swiper-button-next"></div>
+            </div>
+            <div class="lunbotu-right">
+                <a href="javascript:;"><img src="/images/nav-pic1.jpg"></a>
+                <a href="javascript:;"><img src="/images/nav-pic2.jpg"></a>
+            </div>
+        </div>
+    </div>
+    <!-- 帮助 -->
+    <a href="javascript:;" class="help">
+        <ul>
+            <li><i></i><span>正品保障</span></li>
+            <li><i></i><span>先行赔付</span></li>
+            <li><i></i><span>发票保障</span></li>
+            <li><i></i><span>24h发货</span></li>
+            <li><i></i><span>无忧退货</span></li>
+        </ul>
+    </a>
+    <!-- 精品团 -->
+    <div class="boutique" id="boutique">
+        
+                
+            
+    </div>
+    <!-- 今日团 -->
+    <div class="today-group" id="today-group">
+            <div class="today-group-wrap">
+                    <div class="today-header">
+                            <h3>今日团</h3>
+                            <ul class="sort-content">
+                                <li class="red"><a href="javascript:;" id="idsort">默认</a></li><!-- id-->
+                                <li><a href="javascript:;" id="timesort">最新团购</a></li><!-- day shi fen miao -->
+                                <li><a href="javascript:;" id="salessort">销量<i></i></a></li><!-- sales -->
+                                <li><a href="javascript:;" id="pricesort">价格<i></i></a></li><!-- price-->
+                            </ul>
+                    </div>
+                    <div id="shoplist">
+                        <!-- <ul class="shoplist" id="shoplist"> -->
+                            <!-- <script type="text/html" id="shoplist-data">
+                            {{each list item}}
+                                <li>
+                                    <img src="{{item.img[1]}}" alt="">
+                                    <div class="li-wrap">
+                                            <div class="shopname"><a href="javascript:;">{{item.name}}</a></div>
+                                            <div class="introduce">{{item.introduce}}</div>
+                                            <div class="shoppirce">￥<span>{{item.price}}</span></div>
+                                            <div class="originalprice">￥<span>{{item.originalprice}}</span></div>
+                                            <div class="mspurchase" data-id="{{item.lid}}{{item.id}}"><a href="javascript:;">马上抢</a></div>
+                                            
+                                    </div>    
+                                    <div class="time">剩余：<span>{{item.time.day}}</span>天 <span>{{item.time.shi}}</span>时 <span>{{item.time.fen}}</span>分 <span>{{item.time.miao}}</span>秒</div>
+                                </li>
+                            {{/each}}
+                            </script> -->
+                        <!-- </ul> -->
+                        
+                    </div>
+                    <button type="button" id="load">加载更多商品...</button>
+            </div>
+    </div>
+    <!-- 公共尾部 -->
+    <div class="footer">
+        
+    </div>
+    <!-- 固定导航 -->
+    <div class="fixed">
+        <div class="top"><a href="javascript:;">客户服务</a></div>
+        <div class="bottom" id="goTop"><a href="javascript:;"><img src="/images/arrow-up.png" alt=""></a></div>
+    </div>
+    
+    <script src="/libs/require.js" data-main="/js/index.js"></script>
+</body>
+</html>

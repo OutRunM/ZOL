@@ -1,0 +1,67 @@
+<script type="text/html" id="cart-content">
+<tr class="store">
+    <td>
+        <div class="storename">
+            <input type="radio" class="check" checked>
+            店铺：<a href="javascript:;">汇通数码风暴专营店</a>
+        </div>
+        <div><img src="/images/tag-security.png" alt=""></div>
+        <div><a href="javascript:;"><img src="/images/button_121.gif" alt=""></a></div>
+    </td>
+</tr>
+
+
+        {{each cart item}}
+            
+            <tr class="shop-detail" data-id="{{item.id}}">
+                <td class="wrap_1">
+                    <div class="check-left">
+                        <input type="checkbox" class="checkbox">
+                        <a href="#">
+                            <img src="{{item.zpic}}" alt="">
+                        </a>
+                    </div>
+                    
+                    <div class="text-right">
+                        <p><a href="#">{{item.name}}</a></p>
+                        <a href="#" class="img">
+
+                        </a>
+                        <div>
+                            颜色：<span>白色</span>
+                        </div>
+                        <div>
+                            套装：<span>官方标配</span>
+                        </div>
+                    </div>
+                    
+                </td>
+                <td class="wrap_2">
+                    <p class="originalprice">{{item.originalprice}}</p>
+                    <p class="price">{{item.price}}</p>
+                </td>
+                <td class="wrap_3" data-mod="{{item.mod}}">
+                    <a href="javascript:;" class = "red">-</a>
+                    <input type="text" value="{{item.num}}" class="purnum" data-num="{{item.limit}}">
+                    <a href="javascript:;" class = "add" data-num="{{item.limit}}">+</a>
+                    <div class="tip">
+                        最多购买{{item.limit}}件
+                    </div>
+                </td>
+                <td class="wrap_4">
+                    <p>团购</p>
+                    
+                    <div>
+                        <span>{{item.day}}</span>天 <span>{{item.shi}}</span>时 <span>{{item.fen}}</span>分 <span>{{item.miao}}</span>秒
+                    </div>
+                    
+                </td>
+                <td class="wrap_5">
+                    
+                </td>
+                <td class="wrap_6">
+                    <a href="javascript:;" class="delBtn">删除</a>
+                </td>
+            </tr>
+            {{/each}}
+</script>
