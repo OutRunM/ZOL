@@ -30,14 +30,18 @@ require(["require.config"],()=>{
                 $(".add").click(function(){
                     
                     let id = $(this).parent().parent().data("id");
+                    //数量
                     let num = $(this).parent().children(".purnum").val();
+                    //数据地址
                     let mod = $(this).parent().data("mod");
                     if( ++num > $(this).data("num") ){
                         num = $(this).data("num");
+                        //数量超规定数量时显示提示
                         _this.none(this);
                     }
                     $(this).parent().children(".purnum").val(num);
                     _this.money();
+                    //存数量
                     _this.setlocalStorage(num,id,mod);
                     _this.total();
                     _this.allMoney();
@@ -66,6 +70,7 @@ require(["require.config"],()=>{
                         num = 1;
                     }else if(num >  $(this).data("num")){
                         num = $(this).data("num");
+                        //数量超规定数量时显示提示
                         _this.none(this);
                     }
                     _this.setlocalStorage(num,id,mod);
@@ -153,6 +158,7 @@ require(["require.config"],()=>{
                 i = 0;
                 if(obj.some((item,index)=>{
                     i = index;
+                    //id和数据地址相同时
                     return item.id == id && item.mod == mod;
                 })){
                     obj[i].num = num;

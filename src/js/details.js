@@ -138,20 +138,26 @@ require(["require.config"],()=>{
                             this.arr[i] = obj;
                         }else{
                             this.arr.push(obj);
-                            $(".tis").css({"opacity":"1"})
-                            setTimeout(()=>{
-                                $(".tis").css({"opacity":"0"});
-                            },2000)
+                            this.tis();
                         }
 
                     }else{
                         this.arr = [];
-                        this.arr.push(obj); 
+                        this.arr.push(obj);
+                        this.tis();
                     }
                     localStorage.setItem("cart",JSON.stringify(this.arr));
                     Header.cartNum();  
                 });
-              }              
+              }
+              //添加新商品就提示用户
+              tis(){
+                  
+                  $(".tis").css({"opacity":"1"})
+                  setTimeout(()=>{
+                      $(".tis").css({"opacity":"0"});
+                  },2000);
+              }             
         }
         new Details();
     })

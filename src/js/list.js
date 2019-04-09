@@ -1,13 +1,12 @@
 require(["require.config"],()=>{
-    require(["jquery","url","template","shoplist","header","footer","nav","search"],($,url,template,Shoplist)=>{
+    require(["jquery","url","template","header","footer","nav","search"],($,url,template)=>{
         class List{
             constructor(){
                 this.page = 1;
                 this.init().then(()=>{
                     this.getdata();
                     this.roll();
-                    //排序
-                    this.sortbinds();
+                    
                     //调用主页排序方法
                     // Shoplist.sortbinds(list);
                     //调用跳转详情页
@@ -28,7 +27,8 @@ require(["require.config"],()=>{
                 let arr = location.search.split("&"),
                 type = arr[1].split("=")[1];
                 this.mod = arr[0].split("=")[1];
-
+                //商品类型调用
+                
                 this.shoptype(type);
                 
                 $.get(url.baseUrl+this.mod,(res)=>{
@@ -47,9 +47,8 @@ require(["require.config"],()=>{
             render(){
 
                 $("#shoplist").html(template("shoplist-data",{list:this.nowlist}));
-                
-                console.log(this.nowlist);
-                
+                //排序
+                this.sortbinds();
                 this.godetail();
             }
             //商品类型
@@ -79,6 +78,7 @@ require(["require.config"],()=>{
                 let _this = this;
                 $(".mspurchase").on("click", function(){
                     let id = $(this).data("id");
+                    console.log(_this.mod);
                     window.location="/html/details.html?id="+id+"&mod="+_this.mod;
                 });
             }
@@ -107,7 +107,7 @@ require(["require.config"],()=>{
                         //渲染相应页码的数据
                         _this.page = $(this).html();
                         _this.judge();
-                        console.log(_this.page)
+                        console.log(_this.page);
                         _this.render();
                     }
                 })
@@ -144,7 +144,6 @@ require(["require.config"],()=>{
             /*滚动显示隐藏 */
             roll(){
                 $(window).scroll(function () { 
-                    
                     if($(this).scrollTop()>=1200){
 
                         $(".fixed").show();

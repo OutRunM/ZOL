@@ -30,13 +30,13 @@ define(["jquery","template","url"], ($,template,url)=> {
                         this.list = res.res_body.data.list;
                         //记录刚开始加载时的前12个商品
                         this.nowlist = this.list.slice(0,12);
-                        this.render(this.nowlist);
+                        this.render();
                     }
                 })
         }
         //渲染页面
-        render(list){
-            $("#shoplist").html(template("shoplist-data",{list}));
+        render(){
+            $("#shoplist").html(template("shoplist-data",{list:this.nowlist}));
             
             this.godetails();
 
@@ -57,7 +57,7 @@ define(["jquery","template","url"], ($,template,url)=> {
                 //记录加载后显示的商品
                 this.nowlist = this.list.slice(0,12*this.i++);
                 
-                this.render(this.nowlist);
+                this.render();
                 
             });
         }
@@ -77,7 +77,7 @@ define(["jquery","template","url"], ($,template,url)=> {
                     }
                     
                 })
-                this.render(this.nowlist);
+                this.render();
             });
             $("#timesort").click(()=> {
                 $(".sort-content").children("li").removeClass("red");
@@ -91,7 +91,7 @@ define(["jquery","template","url"], ($,template,url)=> {
                     }
                     
                 })
-                this.render(this.nowlist);
+                this.render();
             });
             $("#pricesort").click(()=> {
                 $(".sort-content").children("li").removeClass("red");
@@ -105,7 +105,7 @@ define(["jquery","template","url"], ($,template,url)=> {
                     }
                     
                 })
-                this.render(this.nowlist);
+                this.render();
             });
             $("#salessort").click(()=> {
                 $(".sort-content").children("li").removeClass("red");
@@ -119,7 +119,7 @@ define(["jquery","template","url"], ($,template,url)=> {
                     }
                     
                 })
-                this.render(this.nowlist);
+                this.render();
             });
         }
 

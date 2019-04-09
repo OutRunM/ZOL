@@ -14,7 +14,6 @@ require.config({
         "zoom":"libs/jquery-plugins/jquery.elevateZoom-3.0.8.min",
         "url":"js/module/url",
         "list":"js/list",
-        "index":"js/index"
     },
     shim : {
 		"zoom" : {

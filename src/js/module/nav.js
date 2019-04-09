@@ -46,7 +46,7 @@ define(['jquery'], ($)=> {
             });
             $(".qt").click(function(){
                 if(!($(this).hasClass("red")))  
-                window.location = "/html/list.html?mod=shoplist&type=qt";
+                window.location = "/html/list.html?mod=newshop&type=qt";
             });
 
         }

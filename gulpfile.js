@@ -65,7 +65,7 @@ gulp.task("api", () => {
 
 gulp.task("server", () => {
   connect.server({
-    port:3333,
+    port:2333,
     livereload : true,
     root: "dist"
   })
