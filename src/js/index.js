@@ -1,3 +1,6 @@
+/**
+ * 主页
+ */
 require(["require.config"],function(){
     require(["jquery","Swiper","search","template","tools","header","boutique","nav","shoplist","footer"],function($,Swiper){
         class Index{

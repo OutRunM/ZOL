@@ -147,12 +147,11 @@ require(["require.config"],()=>{
                         this.tis();
                     }
                     localStorage.setItem("cart",JSON.stringify(this.arr));
-                    Header.cartNum();  
+                    Header.cartNum();//调用头部的记录购物车数量方法
                 });
               }
               //添加新商品就提示用户
               tis(){
-                  
                   $(".tis").css({"opacity":"1"})
                   setTimeout(()=>{
                       $(".tis").css({"opacity":"0"});

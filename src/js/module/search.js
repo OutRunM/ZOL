@@ -1,9 +1,9 @@
-define(['jquery'], function($) {
+define(['jquery',"header"], function($,Header) {
     class Search{
         constructor(){
             this.init().then(()=>{
                 this.bind();
-
+                Header.cartNum();//调用头部的记录购物车数量方法
             });
         }
         init(){

@@ -3,13 +3,11 @@ require(["require.config"],()=>{
         class List{
             constructor(){
                 this.page = 1;
+                this.j = true;
                 this.init().then(()=>{
                     this.getdata();
                     this.roll();
-                    
-                    //调用主页排序方法
-                    // Shoplist.sortbinds(list);
-                    //调用跳转详情页
+                   
                 });
             }
             init(){
@@ -27,8 +25,8 @@ require(["require.config"],()=>{
                 let arr = location.search.split("&"),
                 type = arr[1].split("=")[1];
                 this.mod = arr[0].split("=")[1];
-                //商品类型调用
                 
+                //商品类型调用
                 this.shoptype(type);
                 
                 $.get(url.baseUrl+this.mod,(res)=>{
@@ -48,8 +46,31 @@ require(["require.config"],()=>{
 
                 $("#shoplist").html(template("shoplist-data",{list:this.nowlist}));
                 //排序
-                this.sortbinds();
+                
+                if(this.j){
+                    this.sortbinds();
+                    this.j = false;
+                }
+                
                 this.godetail();
+            }
+            //判断页码改变当页显示的数量范围
+            judge(){
+                //判断数据长度是否有12
+                if(this.list.length > 12){
+                    let overpage =  12*this.page;
+                    
+                    if(overpage>this.list.length){
+                        overpage = this.list.length;
+                    }
+
+                    this.nowlist = this.list.slice(12*(this.page-1),overpage);
+                    $(".page").css({"display":"inline-block"});// 显示页码按钮
+                }else{
+                    
+                    this.nowlist = this.list;
+                    
+                }
             }
             //商品类型
             shoptype(type){
@@ -78,7 +99,6 @@ require(["require.config"],()=>{
                 let _this = this;
                 $(".mspurchase").on("click", function(){
                     let id = $(this).data("id");
-                    console.log(_this.mod);
                     window.location="/html/details.html?id="+id+"&mod="+_this.mod;
                 });
             }
@@ -97,7 +117,11 @@ require(["require.config"],()=>{
                 let _this = this;
                 // 单页码绑定
                 $(".btn").click(function(){
+                    
                     if(!$(this).hasClass("red")){
+                        //当点击正确页码时排序按钮回归到默认
+                        $(".sort-content").children("li").removeClass("red");
+                        $("#idsort").parent().addClass("red");
                         //所有按钮去掉样式
                         $(this).parent().children("li").removeClass("red");
                         //点击该按钮添加样式
@@ -107,16 +131,19 @@ require(["require.config"],()=>{
                         //渲染相应页码的数据
                         _this.page = $(this).html();
                         _this.judge();
-                        console.log(_this.page);
                         _this.render();
                     }
                 })
+                
                 //下一页按钮绑定
                 $(".nextpage").click(function(){
-
+                    
                     $(".btn").each(function(){
                         
                         if($(this).hasClass("red")){
+                            //当点击正确页码时排序按钮回归到默认
+                            $(".sort-content").children("li").removeClass("red");
+                            $("#idsort").parent().addClass("red");
                             $(this).next().click();
                             //跳出循环
                             return false;
@@ -127,11 +154,14 @@ require(["require.config"],()=>{
                 })
                 //上一页按钮绑定
                 $(".prevpage").click(function(){
-
+                    
                     $(".btn").each(function(){
                         
                         
                         if($(this).hasClass("red")){
+                            //当点击正确页码时排序按钮回归到默认
+                            $(".sort-content").children("li").removeClass("red");
+                            $("#idsort").parent().addClass("red");
                             $(this).prev().click();
                             //跳出循环
                             return false;
@@ -182,6 +212,7 @@ require(["require.config"],()=>{
                         }
                         
                     })
+                    console.log(11);
                     this.render();
                     
                 });
@@ -230,24 +261,7 @@ require(["require.config"],()=>{
                     
                 });
             }
-            //判断页码
-            judge(){
-                //判断数据长度是否有12
-                if(this.list.length > 12){
-                    let overpage =  12*this.page;
-                    
-                    if(overpage>this.list.length){
-                        overpage = this.list.length;
-                    }
-
-                    this.nowlist = this.list.slice(12*(this.page-1),overpage);
-                    
-                }else{
-                    // 没有12条数据就隐藏页码按钮
-                    this.nowlist = this.list;
-                    $(".page").css({"display":"none"});
-                }
-            }
+            
         }
         new List(); 
     })
