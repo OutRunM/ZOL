@@ -13,8 +13,6 @@ require(["require.config"],()=>{
                 //获取localStorage
                 let cart = JSON.parse(localStorage.getItem("cart"));
 
-                
-
                 $(".tbody").load("/html/module/cart-content.html",()=>{
                     $(".tbody").html(template("cart-content",{cart}));
                     this.binds();

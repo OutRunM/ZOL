@@ -2,7 +2,7 @@
  * 详情页面
  */
 require(["require.config"],()=>{
-    require(["jquery","template","Swiper","url","header","zoom","footer","search","nav"],($,template,Swiper,url,Header)=>{
+    require(["jquery","template","Swiper","url","header","zoom","footer","search","nav","fly"],($,template,Swiper,url,Header)=>{
         class Details{
             constructor(){
                 this.init();
@@ -110,7 +110,7 @@ require(["require.config"],()=>{
               //加入购物车
               joincart(){
                 
-                $("#joincart").click(()=>{ 
+                $("#joincart").click((e)=>{ 
                     
                     let id = this.id,
                     name = $("#name").html(),
@@ -148,13 +148,33 @@ require(["require.config"],()=>{
                     }
                     localStorage.setItem("cart",JSON.stringify(this.arr));
                     Header.cartNum();//调用头部的记录购物车数量方法
+
+
+                    $(`<div style="width:40px;height:40px;"><img style="width:40px;height:40px;border-radius:50%;" src="${zpic}"></div>`).fly({
+                        start:{
+                          left: e.clientX,  //开始位置（必填）#fly元素会被设置成position: fixed
+                          top: e.clientY,  //开始位置（必填）
+                        },
+                        end:{
+                          left: $(window).innerWidth() - 33, //结束位置（必填）
+                          top: $(".aside-main").position().top + 70  //结束位置（必填）
+                          
+                        },
+                        autoPlay: true, //是否直接运动,默认true
+                        speed: 1.3, //越大越快，默认1.2
+                        vertex_Rtop: 40, //运动轨迹最高点top值，默认20
+                        onEnd: function(){
+                          this.destroy(); // 把运动的小方块销毁
+                        } //结束回调
+                      })
                 });
               }
               //添加新商品就提示用户
               tis(){
                   $(".tis").css({"opacity":"1"})
                   setTimeout(()=>{
-                      $(".tis").css({"opacity":"0"});
+                      $(".tis").css({"opacity":"0","display":"none"});
+                      
                   },2000);
               }             
         }

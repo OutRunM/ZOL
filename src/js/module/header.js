@@ -42,7 +42,6 @@ define(["jquery","tools","template"],function ($) {
         cartNum(){
             if(localStorage.getItem("cart")){
                 let cartnum = (JSON.parse(localStorage.getItem("cart"))).length;
-                console.log(22);
             $(".cart-num").html(cartnum);
             }
             

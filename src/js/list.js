@@ -2,26 +2,23 @@
  * 商品列表分页
  */
 require(["require.config"],()=>{
-    require(["jquery","url","template","header","footer","nav","search"],($,url,template)=>{
+    require(["jquery","url","template","sort","header","footer","nav","search"],($,url,template,sort)=>{
         class List{
             constructor(){
                 this.page = 1;
-                this.j = true;
                 this.init().then(()=>{
                     this.getdata();
                     this.roll();
-                   
+                    this.godetail();
                 });
+                
             }
             init(){
-                
                 return new Promise(resolve=>{
                     $("#shoplist").load("/html/module/shoplist.html",()=>{
                         resolve();
                     })
                 })
-                
-                
             }
             //获取数据
             getdata(){
@@ -36,27 +33,13 @@ require(["require.config"],()=>{
                     if(res.res_code == 1 ){
                         this.list = res.res_body.data.list;
                         //判断页码
-                        this.judge()
-                        //调用渲染页面
-                        this.render();
-                        // 调用创建页码
+                        this.judge();
+                         // 调用创建页码
                         this.setapage();
                     }
-                    });
+                });
             }
-            //渲染页面
-            render(){
-
-                $("#shoplist").html(template("shoplist-data",{list:this.nowlist}));
-                //排序
-                
-                if(this.j){
-                    this.sortbinds();
-                    this.j = false;
-                }
-                
-                this.godetail();
-            }
+            
             //判断页码改变当页显示的数量范围
             judge(){
                 //判断数据长度是否有12
@@ -71,9 +54,18 @@ require(["require.config"],()=>{
                     $(".page").css({"display":"inline-block"});// 显示页码按钮
                 }else{
                     
-                    this.nowlist = this.list;
-                    
+                    this.nowlist = this.list; 
                 }
+                //调用渲染页面
+                this.render();
+                 //排序
+                sort($(".sort-content"),$("#shoplist"),"shoplist-data",this.nowlist);
+            }
+            //渲染页面
+            render(){
+
+                $("#shoplist").html(template("shoplist-data",{list:this.nowlist}));
+                  
             }
             //商品类型
             shoptype(type){
@@ -100,10 +92,13 @@ require(["require.config"],()=>{
             //跳转详情页
             godetail(){
                 let _this = this;
-                $(".mspurchase").on("click", function(){
-                    let id = $(this).data("id");
-                    window.location="/html/details.html?id="+id+"&mod="+_this.mod;
-                });
+                
+                $("#shoplist").on("click",".mspurchase",function(){
+                    
+                        let id = $(this).data("id");
+                        window.location="/html/details.html?id="+id+"&mod="+_this.mod;
+                    
+                })
             }
             //创建页码
             setapage(){
@@ -120,11 +115,10 @@ require(["require.config"],()=>{
                 let _this = this;
                 // 单页码绑定
                 $(".btn").click(function(){
-                    
                     if(!$(this).hasClass("red")){
                         //当点击正确页码时排序按钮回归到默认
                         $(".sort-content").children("li").removeClass("red");
-                        $("#idsort").parent().addClass("red");
+                        $(".idsort").parent().addClass("red");
                         //所有按钮去掉样式
                         $(this).parent().children("li").removeClass("red");
                         //点击该按钮添加样式
@@ -133,6 +127,7 @@ require(["require.config"],()=>{
                         $(window).scrollTop(0);
                         //渲染相应页码的数据
                         _this.page = $(this).html();
+                         //改变当页显示的数量范围
                         _this.judge();
                         _this.render();
                     }
@@ -199,72 +194,6 @@ require(["require.config"],()=>{
                     
                 })
             }
-            //排序绑定
-            sortbinds(){            
-                let j = false;
-                $("#idsort").click(()=> {
-                    // console.log($(this).parent());
-                    $(".sort-content").children("li").removeClass("red");
-                    $("#idsort").parent().addClass("red");
-                    j = !j;
-                    this.nowlist.sort((a,b)=>{
-                        if(j){
-                            return b.id-a.id;
-                        }else{
-                            return a.id-b.id;
-                        }
-                        
-                    })
-                    console.log(11);
-                    this.render();
-                    
-                });
-                $("#timesort").click(()=> {
-                    $(".sort-content").children("li").removeClass("red");
-                    $("#timesort").parent().addClass("red");
-                    j = !j;
-                    this.nowlist.sort((a,b)=>{
-                        if(j){
-                            return b.time.day - a.time.day;
-                        }else{
-                            return a.time.day - b.time.day;
-                        }
-                        
-                    })
-                    this.render();
-                });
-                $("#pricesort").click(()=> {
-                    $(".sort-content").children("li").removeClass("red");
-                    $("#pricesort").parent().addClass("red");
-                    j = !j;
-                    this.nowlist.sort((a,b)=>{
-                        if(j){
-                            return b.price - a.price;
-                        }else{
-                            return a.price - b.price;
-                        }
-                        
-                    })
-                    this.render();
-                    
-                });
-                $("#salessort").click(()=> {
-                    $(".sort-content").children("li").removeClass("red");
-                    $("#salessort").parent().addClass("red");
-                    j = !j;
-                    this.nowlist.sort((a,b)=>{
-                        if(j){
-                            return b.sales - a.sales;
-                        }else{
-                            return a.sales - b.sales;
-                        }
-                        
-                    })
-                    this.render();
-                    
-                });
-            }
-            
         }
         new List(); 
     })

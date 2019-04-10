@@ -32,9 +32,7 @@ require(["require.config"],function(){
                       mySwiper.pagination.bullets[i].onmouseover=function(){
                         this.click();
                       };
-                    } 
-                    
-                    
+                    }  
             }
             /**
              * 自动播放轮播图

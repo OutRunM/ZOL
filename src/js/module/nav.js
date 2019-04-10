@@ -47,6 +47,7 @@ define(['jquery'], ($)=> {
                 if(!($(this).hasClass("red")))  
                 window.location = "/html/list.html?mod=shoplist&type=zn";
             });
+            //跳转数据少的  以便查看商品分页效果
             $(".qt").click(function(){
                 if(!($(this).hasClass("red")))  
                 window.location = "/html/list.html?mod=newshop&type=qt";

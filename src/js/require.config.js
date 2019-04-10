@@ -14,10 +14,15 @@ require.config({
         "zoom":"libs/jquery-plugins/jquery.elevateZoom-3.0.8.min",
         "url":"js/module/url",
         "list":"js/list",
+        "sort":"js/module/sort",
+        "fly":"libs/jquery-plugins/jquery.fly.min"
     },
     shim : {
 		"zoom" : {
 			deps: ["jquery"]
-		}
+        },
+        "fly":{
+            deps: ["jquery"]
+        }
 	}
 })
