@@ -1,3 +1,6 @@
+/**
+ * 公共搜索
+ */
 define(['jquery',"header"], function($,Header) {
     class Search{
         constructor(){

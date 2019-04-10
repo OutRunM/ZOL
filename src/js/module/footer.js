@@ -1,3 +1,6 @@
+/**
+ * 公共尾部
+ */
 define(["jquery"], ($)=> {
     class Footer{
         constructor(){

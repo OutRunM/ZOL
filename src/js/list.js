@@ -1,3 +1,6 @@
+/**
+ * 商品列表分页
+ */
 require(["require.config"],()=>{
     require(["jquery","url","template","header","footer","nav","search"],($,url,template)=>{
         class List{

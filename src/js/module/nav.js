@@ -1,3 +1,6 @@
+/**
+ * 公共导航
+ */
 define(['jquery'], ($)=> {
     class Nav{
         constructor(){

@@ -1,3 +1,6 @@
+/**
+ * 主页轮播图商品
+ */
 define(['jquery','Swiper', 'template','url'], function($,Swiper,template,url) {
     
     class Boutique{

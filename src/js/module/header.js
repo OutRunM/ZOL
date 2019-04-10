@@ -1,3 +1,6 @@
+/**
+ * 公共头部
+ */
 define(["jquery","tools","template"],function ($) {
     class Header{
         constructor(){

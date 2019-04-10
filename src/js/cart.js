@@ -1,3 +1,6 @@
+/**
+ * 购物车
+ */
 require(["require.config"],()=>{
     require(["jquery","template","header","footer"],($,template,Header)=>{
 
@@ -129,7 +132,7 @@ require(["require.config"],()=>{
                     
                 } 
                     localStorage.setItem("cart",JSON.stringify(cart));
-                    Header.cartNum();
+                    Header.cartNum();//调用头部的记录购物车数量方法
                     this.checkbox()
                     this.total();
                     this.allMoney();

@@ -1,6 +1,6 @@
 /**
-     * 主页商品列表
-     */
+ * 主页商品列表
+ */
 define(["jquery","template","url"], ($,template,url)=> {
     
     class Shoplist{
