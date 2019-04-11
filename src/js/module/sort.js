@@ -7,7 +7,7 @@ define(["jquery","template"], function($,template) {
     //data template的script的ID名
     // nowlist 请求的数据
     // shoplist 需要渲染到的容器
-    return function sort(element,shoplist,data,nowlist){
+    return function (element,shoplist,data,nowlist){
         let j = false;
         function render(shoplist,data,nowlist){
 

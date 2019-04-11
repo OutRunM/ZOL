@@ -121,12 +121,11 @@ require(["require.config"],()=>{
                     miao = $("#miao").html(),
                     price = $("#price").html(),
                     originalprice = $("#originalprice").html(),
-                    purnum = $("#purnum").val(),
                     limit = $("#limit").html(),
                     num = $("#purnum").val(),
                     i = 0,
                     mod = this.mod,
-                    obj = {num,id,mod,name,zpic,day,shi,fen,miao,price,originalprice,purnum,limit};
+                    obj = {num,id,mod,name,zpic,day,shi,fen,miao,price,originalprice,limit};
                     
                     //存localStorage
                     if(localStorage.getItem("cart")){
