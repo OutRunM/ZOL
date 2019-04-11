@@ -115,9 +115,11 @@
         }
     }
     .main-content{
+        width: 940px;
         height: 500px;
         border: 1px solid #e0e0e0;
         padding: 20px;
+        float: left;
         .pic{
             width: 400px;
             float: left;
@@ -346,11 +348,77 @@
         }
         
     }
+    
+}
+
+.advert{
+    float: left;
+    border-right: 1px solid #e0e0e0;
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+    width: 200px;
+    height: 540px;
+    .advert-head{
+        height: 32px;
+        line-height: 32px;
+        background: #ededed;
+        padding: 0 10px;
+        border-bottom: 1px solid #e0e0e0; 
+        a{
+            color: #36c;
+            float: right;
+        }
+        a:hover{
+            text-decoration:underline;
+        }
+    }
+    ul{
+        padding: 0 15px;
+        li{
+            border-bottom: 1px dotted #e6e6e6;
+            padding: 10px 0;
+            p:nth-child(2){
+                height: 36px;
+                overflow: hidden;
+                line-height: 18px;
+                a{
+                    color: #333;
+                }
+                a:hover{
+                    color: #ec3639;
+                    text-decoration:underline;
+                }
+            }
+            p:nth-child(3){
+                font-size: 16px;
+                line-height: 28px;
+                height: 18px;
+                span:nth-child(1){
+                    color: #c00;
+                    float: left;
+                }
+                span:nth-child(2){
+                    float: right;
+                    color: #666;
+                    text-decoration: line-through;
+                }
+            }
+        }
+        li:last-child{
+            border: none;
+        }
+    }
+}
+}
+.main::after{
+    content: "";
+    display: block;
+    clear: both;
 }
 .shopcontent{
-    margin-top: 20px;
+    width: 1200px;
+    margin: 20px auto;
     height: 400px;
     border: 1px solid #e0e0e0;
     margin-bottom: 50px;
-}
 }
