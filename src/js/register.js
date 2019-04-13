@@ -9,8 +9,14 @@ require(["require.config"],()=>{
             }
             init(){
                 $("#register-btn").on("click",function () {
+                    
                     var username = $("#username").val(),
                         password = $("#password").val();
+                        if(username == "" || username== null){
+                            alert("请输入正确的用户名!");
+                        }else{
+
+                        
                         $.ajax({
                             type:"post",
                             url:url.phpbaseUrl+"register.php",
@@ -29,7 +35,7 @@ require(["require.config"],()=>{
                             }
                             }
                         });
-
+                    }
                 })
             }
         }
